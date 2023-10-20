@@ -1,0 +1,11 @@
+.bar-item {
+    flex: 1;
+    height: 100%;
+    background-color: #3fb34b;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+  }
+  
+  .bar-item:hover {
+    background-color: #54d6da;
+  }
