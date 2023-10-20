@@ -40,6 +40,13 @@
 .container {
   width: 100%;
   max-width: 800px;
+  text-align: center;
   margin: 0 auto;
   padding: 20px 15px;
+  margin-top: 50px;
+}
+
+.bars {
+  margin: auto;
+  width: 50%;
 }
