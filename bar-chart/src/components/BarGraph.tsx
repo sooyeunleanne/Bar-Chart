@@ -3,13 +3,14 @@ import BarItem from './BarItem';
 import './BarGraph.css';
 
 export type Props = {
+  orientation: string;
   dataArray: Array<{
     value: number;
     legend: string;
   }>;
 };
 
-export default function BarGraph({ dataArray }: Props) {
+export default function BarGraph({orientation, dataArray }: Props) {
   const barItems = useMemo(() => {
     let highestValue = 0;
 
@@ -22,6 +23,8 @@ export default function BarGraph({ dataArray }: Props) {
     return dataArray.map((item) => ({
       legend: item.legend,
       barPercentage: `${Math.round((item.value / highestValue) * 100)}%`,
+      value: item.value,
+      orientation: orientation
     }));
   }, [dataArray]);
 
@@ -33,6 +36,8 @@ export default function BarGraph({ dataArray }: Props) {
             key={idx}
             legend={barItem.legend}
             barPercentage={barItem.barPercentage}
+            value = {barItem.value}
+            orientation = {barItem.orientation}
           />
         ))}
       </div>
