@@ -4,13 +4,14 @@ import './BarGraph.css';
 
 export type Props = {
   orientation: string;
+  color: string;
   dataArray: Array<{
     value: number;
     legend: string;
   }>;
 };
 
-export default function BarGraph({orientation, dataArray }: Props) {
+export default function BarGraph({orientation, color, dataArray }: Props) {
   const barItems = useMemo(() => {
     let highestValue = 0;
 

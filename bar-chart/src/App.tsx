@@ -1,5 +1,6 @@
 import './App.css';
 import BarGraph from './components/BarGraph';
+import Button from "./components/ButtonComponent";
 
 
 export default function App() {
@@ -26,7 +27,21 @@ export default function App() {
     <div className="container">
     <h1>Bar Graph</h1>
     <div className = "bars">
-      <BarGraph orientation = "vertical" dataArray={dataArray1}/>
+      <BarGraph orientation = "vertical" color = "dark" dataArray={dataArray1}/>
+    </div>
+    <div>
+    <Button color="black" onClick={() => console.log("You clicked on the pink circle!")}
+        children = ""
+      />
+    <Button color="pink" onClick={() => console.log("You clicked on the pink circle!")}
+        children = ""
+      />  
+    <Button color="yellow" onClick={() => console.log("You clicked on the pink circle!")}
+      children = ""
+    />
+    <Button color="purple" onClick={() => console.log("You clicked on the pink circle!")}
+      children = ""
+    />
     </div>
     </div>
   );
