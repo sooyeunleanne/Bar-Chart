@@ -43,7 +43,7 @@ export default function App() {
       <h1>Bar Graph</h1>
       <div className = "bars" >
         <Button color={buttonColor} onClick={(barColor=="skyblue")? pinkColor:skyblueColor}/>
-        <BarGraph orientation = "vertical" color = {barColor} dataArray={dataArray1}/>
+        <BarGraph color = {barColor} dataArray={dataArray1}/>
       </div>
       </div>
     </div>

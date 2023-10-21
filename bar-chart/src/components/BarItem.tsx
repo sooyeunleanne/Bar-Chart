@@ -6,7 +6,6 @@ export type Props = {
   legend: string;
   barPercentage: string;
   value: number;
-  orientation: string;
   color: string;
 };
 

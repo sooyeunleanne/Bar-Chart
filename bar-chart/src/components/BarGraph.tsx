@@ -5,7 +5,6 @@ import Button from "./ButtonComponent";
 
 
 export type Props = {
-  orientation: string;
   color: string;
   dataArray: Array<{
     value: number;
@@ -13,7 +12,7 @@ export type Props = {
   }>;
 };
 
-export default function BarGraph({orientation, color, dataArray }: Props) {
+export default function BarGraph({color, dataArray }: Props) {
   const barItems = useMemo(() => {
     let highestValue = 0;
 
@@ -41,7 +40,6 @@ export default function BarGraph({orientation, color, dataArray }: Props) {
             legend={barItem.legend}
             barPercentage={barItem.barPercentage}
             value = {barItem.value}
-            orientation = {barItem.orientation}
             color = {barItem.color}
           />
         ))}
