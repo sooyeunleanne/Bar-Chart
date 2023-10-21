@@ -1,6 +1,8 @@
 import React, { useMemo } from 'react';
 import BarItem from './BarItem';
 import './BarGraph.css';
+import Button from "./ButtonComponent";
+
 
 export type Props = {
   orientation: string;
@@ -25,7 +27,8 @@ export default function BarGraph({orientation, color, dataArray }: Props) {
       legend: item.legend,
       barPercentage: `${Math.round((item.value / highestValue) * 100)}%`,
       value: item.value,
-      orientation: orientation
+      orientation: orientation,
+      color: color
     }));
   }, [dataArray]);
 
@@ -39,6 +42,7 @@ export default function BarGraph({orientation, color, dataArray }: Props) {
             barPercentage={barItem.barPercentage}
             value = {barItem.value}
             orientation = {barItem.orientation}
+            color = {barItem.color}
           />
         ))}
       </div>

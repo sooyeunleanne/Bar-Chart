@@ -1,48 +1,51 @@
+import React, { useState } from "react";
 import './App.css';
 import BarGraph from './components/BarGraph';
-import Button from "./components/ButtonComponent";
-
+import Button from './components/ButtonComponent';
 
 export default function App() {
   const dataArray1 = [
     {
-      value: 2,
+      value: 45,
       legend: 'Jan',
     },
     {
-      value: 3,
+      value: 85,
       legend: 'Feb',
     },
     {
-      value: 5,
+      value: 32,
       legend: 'Mar',
     },
     {
-      value: 8,
+      value: 90,
       legend: 'Apr',
     }
   ];
   
+  const [barColor, changeColor] = useState("skyblue");
+  const [buttonColor, changeButtonColor] = useState("pink");
+  
+  const pinkColor = () => { //change to pink theme
+    changeButtonColor("skyblue");
+    changeColor("pink");
+  };
+
+  const skyblueColor = () => {  //change to skyblue theme
+    changeButtonColor("pink");
+    changeColor("skyblue");
+  };
+
+
   return (
-    <div className="container">
-    <h1>Bar Graph</h1>
-    <div className = "bars">
-      <BarGraph orientation = "vertical" color = "dark" dataArray={dataArray1}/>
-    </div>
-    <div>
-    <Button color="black" onClick={() => console.log("You clicked on the pink circle!")}
-        children = ""
-      />
-    <Button color="pink" onClick={() => console.log("You clicked on the pink circle!")}
-        children = ""
-      />  
-    <Button color="yellow" onClick={() => console.log("You clicked on the pink circle!")}
-      children = ""
-    />
-    <Button color="purple" onClick={() => console.log("You clicked on the pink circle!")}
-      children = ""
-    />
-    </div>
+    <div className = "App" style = {{backgroundColor: barColor}}>
+      <div className="container">
+      <h1>Bar Graph</h1>
+      <div className = "bars" >
+        <Button color={buttonColor} onClick={(barColor=="skyblue")? pinkColor:skyblueColor}/>
+        <BarGraph orientation = "vertical" color = {barColor} dataArray={dataArray1}/>
+      </div>
+      </div>
     </div>
   );
 }

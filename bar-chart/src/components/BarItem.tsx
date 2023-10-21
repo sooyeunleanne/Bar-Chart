@@ -1,28 +1,20 @@
 import React from 'react';
 import './BarItem.css';
+import barColor from '../App';
 
 export type Props = {
   legend: string;
   barPercentage: string;
   value: number;
   orientation: string;
+  color: string;
 };
 
 export default function BarItem(props: Props) {
-  if (props.orientation == "vertical") {
-    return (
-      <div className="bar-item" style={{ height: props.barPercentage }}>
-        <div className="bar-item-legend">{props.legend}</div>
-        <div className="bar-item-value">{props.value}</div>
-      </div>
-    );
-  }
-  else {
-    return (
-      <div className="bar-item-vertical" style={{ width: props.barPercentage }}>
-        <div className="bar-item-legend">{props.legend}</div>
-        <div className="bar-item-value">{props.value}</div>
-      </div>
-    );
-  }
+  return (
+    <div className="bar-item" style= {{backgroundColor: props.color, height: props.barPercentage}}>
+      <div className="bar-item-legend">{props.legend}</div>
+      <div className="bar-item-value">{props.value}</div>
+    </div>
+  );
 }
