@@ -26,7 +26,6 @@ export default function BarGraph({color, dataArray }: Props) {
       legend: item.legend,
       barPercentage: `${Math.round((item.value / highestValue) * 100)}%`,
       value: item.value,
-      orientation: orientation,
       color: color
     }));
   }, [dataArray]);
